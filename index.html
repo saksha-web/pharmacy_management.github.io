@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-    <script src="https://use.fontawesome.com/9e277c6520.js"></script>    
+    <link href="fontawesome-free-5.15.3-web\css\all.css" rel="stylesheet">
     <style>
       .blur
       {
@@ -14,8 +14,21 @@
         border: 2px solid gray;
         width: 45%;
         min-width: 450px;
+        height: fit-content;
+        top: 200px;
         padding: 60px;
-        margin-top: 12%;
+        margin-top: 0px;
+        position: relative;
+        animation: drop 3000ms 1;
+        animation-direction:normal;
+      }
+      @keyframes drop {
+        0% {
+          margin-top: -50%;
+        }
+        100% {
+          margin: 0px;
+        }
       }
     </style>
   </head>
@@ -70,7 +83,7 @@
           <div class="col-sm-8 input-group">
             <input type="password" class="form-control" id="inputPassword3" name="password" required>
             <span class="input-group-text">
-            <i class="fas fa-eye" id="togglePassword" onclick="toggle()" style="cursor: pointer;"></i>
+            <i class="far fa-eye" id="togglePassword" onclick="toggle()" style="cursor: pointer;"></i>
             </span>
           </div>
         </div>
