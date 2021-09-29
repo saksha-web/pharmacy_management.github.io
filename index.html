@@ -6,9 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-</head>
-<body style="background-image: url(green-cross.jpg);background-size: cover;background-repeat: repeat-y;">
-    <script src="bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <link href="..\fontawesome-free-5.15.3-web\css\all.css" rel="stylesheet">
+    <style>
+      .blur
+      {
+        background-color: rgba(0, 0,0, .7);
+        border: 2px solid gray;
+        width: 45%;
+        min-width: 450px;
+        padding: 60px;
+        margin-top: 12%;
+      }
+    </style>
+  </head>
+<body style="background-image: url(green-cross.jpg);background-size: cover;">
+  <script>
+    function  toggle()
+    {
+      const togglePassword=document.getElementById('togglePassword');
+      const password=document.getElementById('inputPassword3');
+      const type=password.getAttribute('type')==='password'?'text':'password';
+      password.setAttribute('type', type);
+      togglePassword.classList.toggle('fa-eye-slash')
+    }
+  </script>  
+  <script src="bootstrap-5.0.2-dist/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <nav class="navbar navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Pharmacy Management System</a>
@@ -33,9 +55,28 @@
           </div>
         </div>
       </nav>
-    <br>
-    <br>
-    <br>
-    hello
+    <center>
+      <div class="blur">
+        <form method="POST" action="validation.php" class="bg-transparent text-light">
+        <h3>Sign In</h3>
+        <div class="row mb-3">
+          <label for="inputEmail3" class="col-sm-12 col-form-label">Account Id / User Name</label>
+          <div class="col-sm-8 input-group">
+            <input type="text" class="form-control" id="inputEmail3" name="id" required>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="inputPassword3" class="col-sm-12 col-form-label">Password</label>
+          <div class="col-sm-8 input-group">
+            <input type="password" class="form-control" id="inputPassword3" name="password" required>
+            <span class="input-group-text">
+            <i class="far fa-eye" id="togglePassword" onclick="toggle()" style="cursor: pointer;"></i>
+            </span>
+          </div>
+        </div>
+        <button type="reset" class="btn btn-warning">Reset</button>
+        <button type="submit" class="btn btn-primary">Sign in</button>
+      </form>
+      </center>
 </body>
 </html>
